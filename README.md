@@ -15,7 +15,7 @@ Sandglass is a small portfolio app — polished enough to install and use, inten
 
 ## Requirements
 
-- [Android Studio](https://developer.android.com/studio) (Narwhal / Otter / Quail, or any release that supports Android Gradle Plugin 9.3)
+- [Android Studio](https://developer.android.com/studio) **Quail 2+** (2026.1.2+) — or any IDE release that supports **AGP 9.3**
 - JDK 17 or newer (Studio’s bundled JDK is fine)
 - Android SDK **API 37** (`compileSdk`) — Studio will prompt to install it if missing
 - Android emulator or a device running **API 26+** (Android 8.0)
