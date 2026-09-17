@@ -13,6 +13,15 @@ Sandglass is a small portfolio app — polished enough to install and use, inten
 - Light and dark themes, with Material You dynamic color on Android 12+
 - Works fully offline
 
+## Install
+
+Download an APK from [Releases](https://github.com/78tacos/sandglass/releases):
+
+- Any phone or emulator: `sandglass-*-android-universal-debug.apk`
+- 64-bit ARM phones: `sandglass-*-android-arm64-v8a-debug.apk` (smaller)
+
+On the device, allow install from unknown sources for your browser or Files app, then open the APK. These GitHub builds are **debug-signed for sideloading** (not Play Store / Play App Signing). They work on Android 8.0+ (`minSdk` 26).
+
 ## Requirements
 
 - [Android Studio](https://developer.android.com/studio) **Quail 2+** (2026.1.2+) — or any IDE release that supports **AGP 9.3**
@@ -42,10 +51,10 @@ The launcher icon is an hourglass on a dark sand-colored adaptive icon. Grant no
 ./gradlew assembleDebug
 ```
 
-The debug APK is written to `app/build/outputs/apk/debug/app-debug.apk`. Install it with:
+ABI splits write a universal APK plus per-ABI APKs under `app/build/outputs/apk/debug/`. Install the universal build with:
 
 ```bash
-adb install -r app/build/outputs/apk/debug/app-debug.apk
+adb install -r app/build/outputs/apk/debug/app-universal-debug.apk
 ```
 
 ## Tests
