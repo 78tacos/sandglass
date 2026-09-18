@@ -12,10 +12,6 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.rememberScrollState
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.outlined.Pause
-import androidx.compose.material.icons.outlined.PlayArrow
-import androidx.compose.material.icons.outlined.Replay
 import androidx.compose.material3.CenterAlignedTopAppBar
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.FilledTonalButton
@@ -35,10 +31,12 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalView
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
+import com.tacos78.sandglass.R
 import com.tacos78.sandglass.SandglassViewModel
 import com.tacos78.sandglass.data.HapticPreferences
 import com.tacos78.sandglass.timer.FocusTimer
@@ -107,8 +105,8 @@ fun SandglassScreen(
         TimerStatus.Finished -> "Complete"
     }
     val primaryIcon = when (snapshot.status) {
-        TimerStatus.Running -> Icons.Outlined.Pause
-        TimerStatus.Idle, TimerStatus.Paused, TimerStatus.Finished -> Icons.Outlined.PlayArrow
+        TimerStatus.Running -> R.drawable.ic_pause
+        TimerStatus.Idle, TimerStatus.Paused, TimerStatus.Finished -> R.drawable.ic_play_arrow
     }
 
     Scaffold(
@@ -165,7 +163,7 @@ fun SandglassScreen(
             ) {
                 FilledTonalButton(onClick = onReset) {
                     Icon(
-                        imageVector = Icons.Outlined.Replay,
+                        painter = painterResource(R.drawable.ic_replay),
                         contentDescription = null,
                         modifier = Modifier.size(18.dp),
                     )
@@ -174,7 +172,7 @@ fun SandglassScreen(
                 }
                 FilledTonalButton(onClick = onStartPause) {
                     Icon(
-                        imageVector = primaryIcon,
+                        painter = painterResource(primaryIcon),
                         contentDescription = null,
                         modifier = Modifier.size(18.dp),
                     )
