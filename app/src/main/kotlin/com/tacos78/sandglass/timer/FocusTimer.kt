@@ -4,7 +4,6 @@ package com.tacos78.sandglass.timer
  * Wall-clock countdown used by the Sandglass UI.
  *
  * The clock is injected so unit tests can advance time without waiting.
- * Call [tick] to apply elapsed time while [TimerStatus.Running].
  */
 class FocusTimer(
     durationMillis: Long = DEFAULT_DURATION_MS,
